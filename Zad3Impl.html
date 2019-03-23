@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var counterProducer = (function() {
+        var value = 0;
+        function changeBy(val) {
+            value += val;
+        }
+        return {
+            increment: function() {
+                changeBy(1);
+            },
+            decrement: function() {
+                changeBy(-1);
+            },
+            value: function() {
+                return value;
+            }
+        };
+    });
+    var counter = counterProducer();
+    console.log(counter.value())
+    counter.increment()
+    console.log(counter.value())
+    counter.increment()
+    console.log(counter.value())
+    var counter2 = counterProducer()
+    console.log(counter2.value())
+</script>
+</html>

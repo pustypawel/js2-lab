@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    function isOdd(number) {
+        return number % 2 === 0
+    }
+    function randomNumber() {
+        return Math.floor(Math.random() * 1000);
+    }
+    function generateRandomArray(size) {
+        let numbers = [];
+        for (let i = 0; i < size; i++) {
+            numbers.push(randomNumber())
+        }
+        return numbers
+    }
+    function filterOddNumbers(numbers) {
+        let oddNumbers = []
+        for (let i = 0; i < numbers.length; i++) {
+            let number = numbers[i]
+            if (isOdd(number)) {
+                oddNumbers.push(number)
+            }
+        }
+        return oddNumbers
+    }
+    function implUsingNormalJS() {
+        let numbers = generateRandomArray(50)
+        console.log(numbers)
+        let oddNumbers = filterOddNumbers(numbers)
+        console.log(oddNumbers)
+    }
+
+    console.log('Running normal JS impl')
+    implUsingNormalJS();
+
+</script>
+</html>
